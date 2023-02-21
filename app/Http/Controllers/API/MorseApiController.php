@@ -56,45 +56,70 @@ class MorseApiController extends Controller
      */
     public function command($param)
     {
-        switch ($param) {
-            //CPU
-            case '-.-. .--. ..-':
-                return self::cpu();
-                break;
-            //ARCH
-            case '.- .-. -.-. ....':
-                return self::arch();
-                break;
-            //FREEMEM
-            case '..-. .-. . . -- . --':
-                return self::freemem();
-                break;
-            //HOSTNAME
-            case '.... --- ... - -. .- -- .':
-                return self::hostname();
-                break;
-            //PLATFORM
-            case '.--. .-.. .- - ..-. --- .-. --':
-                return self::platform();
-                break;
-            //TOTALMEM
-            case '- --- - .- .-.. -- . --':
-                return self::totalmem();
-                break;
-            //TYPE
-            case '- -.-- .--. .':
-                return self::type();
-                break;
-            //UPTIME
-            case '..- .--. - .. -- .':
-                return self::uptime();
-                break;
-            default:
-                return response()->json(['error_msj' => self::str_to_morse('error. no command.')], 400);
 
-                break;
+
+        if(Cache::has($param)){
+            return Cache::get($param);
+        }else{
+            switch ($param) {
+                //CPU
+                case '-.-. .--. ..-':
+                    $result = self::cpu();
+                    Cache::put($param, $result, 1);
+                    return $result;
+                    break;
+                //ARCH
+                case '.- .-. -.-. ....':
+                    $result = self::arch();
+                    Cache::put($param, $result, 1);
+                    return $result;
+                    break;
+                //FREEMEM
+                case '..-. .-. . . -- . --':
+                    $result = self::freemem();
+                    Cache::put($param, $result, 1);
+                    return $result;
+                    break;
+                //HOSTNAME
+                case '.... --- ... - -. .- -- .':
+                    $result = self::hostname();
+                    Cache::put($param, $result, 1);
+                    return $result;
+                    break;
+                //PLATFORM
+                case '.--. .-.. .- - ..-. --- .-. --':
+                    $result = self::platform();
+                    Cache::put($param, $result, 1);
+                    return $result;
+                    break;
+                //TOTALMEM
+                case '- --- - .- .-.. -- . --':
+                    $result = self::totalmem();
+                    Cache::put($param, $result, 1);
+                    return $result;
+                    break;
+                //TYPE
+                case '- -.-- .--. .':
+                    $result = self::type();
+                    Cache::put($param, $result, 1);
+                    return $result;
+                    break;
+                //UPTIME
+                case '..- .--. - .. -- .':
+                    $result = self::uptime();
+                    Cache::put($param, $result, 1);
+                    return $result;
+                    break;
+                default:
+                    return response()->json(['error_msj' => self::str_to_morse('error. no command.')], 400);
+
+                    break;
+
+            }
 
         }
+
+
     }
 
     /**
