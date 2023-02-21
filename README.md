@@ -32,7 +32,7 @@ Eğer belirtilen command bulunuyor ise geriye aşağıdaki görselde görüldü�
 
 Eğer command bulunamaz veya bir hata ile karşılaşılır ise json formatında error_msj değerine karşılık olarak mors alfabesi kullanılarak hata bastırılır.
 
-#Checksum Kullanımı  : 
+# Checksum Kullanımı  : 
 
 Checksum , bu projede dönecek değerlerin byte cinsinden integer toplamları olarak belirlenmiştir.
 
