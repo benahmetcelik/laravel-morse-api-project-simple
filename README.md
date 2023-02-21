@@ -1,8 +1,9 @@
-#Laravel Simple Morse Api Project
+# Laravel Simple Morse Api Project
+
 Bu proje, kullanıcıların, [http://ik.olleco.net/morse-api/](http://ik.olleco.net/morse-api/) API'ı ile sunucu hakkında bazı bilgileri mors alfabesi formatında edinmesini sağlamaktadır. 
 
 
-#####Kullanıcıların API ile erişebileceği bilgiler şu şekildedir :
+##### Kullanıcıların API ile erişebileceği bilgiler şu şekildedir :
 - CPU 
 - ARCH 
 - FREE MEMORY
@@ -22,7 +23,7 @@ Bu proje, kullanıcıların, [http://ik.olleco.net/morse-api/](http://ik.olleco.
 Bu API kullanılarak anlık sistem değerlerini görebileceğimiz bir sistem monitörünün
 geliştirilmiştir.
 
-#Proje Kurulum Ve İlk İstek: 
+# Proje Kurulum Ve İlk İstek: 
 Sunucuya [https://github.com/benahmetcelik/laravel-morse-api-project-simple](https://github.com/benahmetcelik/laravel-morse-api-project-simple) linki üzerinden proje çekildikten sonra php artisan serve komutu ile çalışması sağlanır.
 
 Daha sonraki atılacak isteklerde method POST olmak koşulu ile mors alfabesi formatında form-data içerisinde “command/checksum” olarak istenilen değer gönderilir.
@@ -37,6 +38,6 @@ Checksum , bu projede dönecek değerlerin byte cinsinden integer toplamları ol
 
 Form-data içerisinde checksum inputu değeri her istekten dönen checksum ile eşleyerek önbellekte bulunuyor ise kayıtlı datayı, bulunmuyor ise hata mesajını json olarak döndürecektir.
 
-Postman Request Docs : 
+## Postman Request Docs : 
 [https://www.postman.com/lively-crescent-264420/workspace/olle/request/21759520-1cc221d3-b855-4949-9428-0b75fec1cdd9](https://www.postman.com/lively-crescent-264420/workspace/olle/request/21759520-1cc221d3-b855-4949-9428-0b75fec1cdd9)
 
